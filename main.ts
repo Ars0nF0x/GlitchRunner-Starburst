@@ -22,22 +22,22 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`tile2`, function (sprite, loc
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Flower, function (sprite, otherSprite) {
     otherSprite.destroy()
     bee = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
         `, SpriteKind.Enemy)
     animation.runImageAnimation(
     bee,
@@ -316,22 +316,26 @@ function startLevel () {
     }
     for (let value7 of tiles.getTilesByType(assets.tile`tile11`)) {
         fireball = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . 5 . . . . . . . . 
-            . . . . 5 5 2 5 5 4 5 5 . . . . 
-            . . . . . 4 4 4 4 2 4 . . . . . 
-            . . . 5 4 4 2 2 2 2 4 5 . . . . 
-            . . . 5 4 . 2 8 2 8 4 2 . . . . 
-            . . . 5 5 . 2 8 8 2 4 5 . . . . 
-            . . . 2 5 2 2 8 2 4 4 5 . . . . 
-            . . . . 5 4 2 2 2 4 5 . . . . . 
-            . . . . . . 4 . 4 4 5 . . . . . 
-            . . . 5 . 5 5 5 4 5 5 . . . . . 
-            . . . . . . . 2 5 5 . . . . . . 
-            . . . . . . . . . . . . . 5 . . 
-            . . . . . . . . . . . . . . . . 
+            .ffffffffffff......
+            .fffffffffff.......
+            .fff1ffffff........
+            fff111ff...........
+            ff111ff.fffffff....
+            f111ffffffffffff...
+            ff1fffffffffffff...
+            .ffffffffffffffff..
+            .ffff1fff1fffffff..
+            .ffff1fff1fffffff..
+            .ffff1fff1ffffff...
+            .ffff1fff1fff.ff...
+            .ffffffffffff......
+            .fff1f1f1f1ff......
+            .fffffffffff.......
+            ..fff1f1f1ff.......
+            ...fffffff.........
+            ...................
+            ...................
+            ...................
             `, SpriteKind.Fireball)
         tiles.placeOnTile(fireball, value7)
         tiles.setTileAt(value7, assets.tile`tile0`)
@@ -350,7 +354,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
         info.changeScoreBy(3)
     } else {
         info.changeLifeBy(-1)
-        music.playSoundEffect(music.createSoundEffect(WaveShape.Noise, 5000, 5000, 0, 255, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
+        music.playSoundEffect(music.createSoundEffect(WaveShape.Noise, 1, 5000, 15, 255, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
         music.playSoundEffect(music.createSoundEffect(WaveShape.Noise, 3300, 5000, 0, 255, 150, SoundExpressionEffect.Warble, InterpolationCurve.Linear), SoundExpressionPlayMode.UntilDone)
     }
 })
